@@ -1,3 +1,4 @@
+import 'package:expenses_tracker/chart.dart';
 import 'package:expenses_tracker/expense.dart';
 import 'package:expenses_tracker/new_expense.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          const Text('Expenses chart'),
+          Chart(expenses: _registeredExpenses),
           Expanded(
             child: ExpensesList(expenses: _registeredExpenses, onRemoveExpense: _removeExpense),
           ), //without Expanded, the inner  Column/ListView will take
